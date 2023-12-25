@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Favicon-->
+  <link rel="icon" type="image/png" sizes="32x32" href="/asset/img/logo/favicon.png">
+  <!--Boxicons link-->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!--CSS link-->
+  <link rel="stylesheet" href="/asset/scss/style.css">
+  <!--JS link-->
+  <script src="/asset/js/main.js" defer></script>
+  <!--Bootstrap CSS link-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!--Bootstrap JS link-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+  <title>Goboli | Portfolio</title>
+</head>
+<body>
+<!--Main Content of the Portfolio-->
+  <main class="portfolio-content">
+    <!--Navigation-->
+    <header class="primary-header d-flex container-fluid">
+      <nav class="navbar nav-container container-fluid d-flex justify-content-between">
+        <a class="nav-logo" href="#home">
+          <img src="/asset/img/logo/Logo.svg" alt="Logo">
+          <h2 class="owner m-0">JG.</h2>
+        </a>
+        <div class="nav-list" id="navigation">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link p-0" href="#home">home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-0" href="#about-me">about</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-0" href="#projects">projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-0" href="#contact">contact</a>
+            </li>
+          </ul>
+        </div>
+        <p class="menu-cta">
+          <i class='bx bx-menu' style='color:#445964'></i>
+        </p>
+      </nav>
+      <div class="overlay">
+        <a class="close"><i class='bx bx-x bx-md'></i></a>
+        <div class="overlay_content">
+          <ul class="mobile_nav d-flex align-items-center m-0 p-0">
+            <li><a class="nav-link p-0" href="#home">Home</a></li>
+            <li><a class="nav-link p-0" href="#about-me">About</a></li>
+            <li><a class="nav-link p-0" href="#projects">Projects</a></li>
+            <li><a class="nav-link p-0" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!--Hero section-->
+    <section class="portfolio-section position-relative hero-section d-flex justify-content-center align-items-center" id="home">
+      <div class="hero-cta">
+        <p class="small-text m-0">
+          Hi there! I'm Jonathan <span class="blockquote-footer"></span>
+        </p>
+        <h1 class="my-role mt-2">
+          <div class="typewrite" data-period="2000" data-type='["Frontent Developer", "UX/UI Designer", "Computer Literated"]'>
+            <span class="wrap"></span>
+          </div>
+        </h1>
+        <div class="link-contact mt-4">
+          <button class="cta" onclick="redirectContact();">
+            <span class="hover-underline-animation">Get in touch</span>
+            <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="social-media position-absolute d-flex justify-content-center align-items-center ">
+          <a href="https://github.com/jonexist" target="_blank">
+            <i class="bx bxl-github bx-sm"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/jonathan-goboli-178763252/" target="_blank">
+            <i class="bx bxl-linkedin-square bx-sm"></i>
+          </a>
+          <a href="https://www.instagram.com/jonexist/" target="_blank">
+            <i class="bx bxl-instagram bx-sm"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!--About me section-->
+    <section class="portfolio-section d-flex justify-content-center align-items-center flex-column pt-4" id="about-me">
+        <div class="container">
+          <div class="page-title">
+            <h2>About me</h2>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-lg-7 pt-4 pt-lg-0 content">
+              <h3>Connect with Jonathan</h3>
+              <p class="fst-italic mb-3 text-align: justify;">
+                Hello there! I'm Jonathan Goboli, a 22-year-old Information Systems student with a strong passion for frontend development and UI/UX design. I love creating user-friendly digital experiences and resolving tech-related issues. When I'm not in front of a screen, I enjoy playing video games and basketball. Let's connect and explore the exciting world of technology together!
+              </p>
+              <div class="download-btn">
+                <button type="button" class="p-btn px-3 py-2 mt-1" onclick="downloadCV()">Download CV
+                <i class="bx bx-download bx-sm"></i>
+                </button>
+              </div>
+            </div>
+            <div class="row col-lg-5 content">
+              <img src="/asset/img/illustrations/Dev illustration.svg" class="img-fluid d-none d-lg-block" alt="Web Developer">
+            </div>
+          </div>
+          <div class="page-title-sub py-5">
+            <h2>Education</h2>
+          </div>
+          <div class="container">
+            <ul class="timeline-with-icons">
+              <li class="timeline-item mb-5">
+                <span class="timeline-icon">
+                  <i class="bx bxs-school"></i>
+                </span>
+                <h5 class="fw-bold">JUNIOR HIGH SCHOOL</h5>
+                <p class="text-muted fw-bold">A.G Villaroya Technological Foundation Institutes</p>
+                <p class="mb-2">2014-2018</p>
+                <p class="text-muted info">
+                  During that time, I had some truly memorable moments that made my high school experience special. It was a time filled with personal growth, friendships, and cherished memories.
+                </p>
+              </li>
+              <li class="timeline-item mb-5">
+                <span class="timeline-icon">
+                  <i class="bx bxs-wrench"></i>
+                </span>
+                <h5 class="fw-bold">COMPUTER SYSTEM SERVICING</h5>
+                <p class="text-muted fw-bold">Bulan National High School</p>
+                <p class="mb-2">2018-2020</p>
+                <p class="text-muted info">
+                  I completed my senior high school, specializing in the Computer System Servicing strand. This educational experience significantly enriched my knowledge and expertise in computer maintenance, troubleshooting, and repair. It provided me with practical skills that have been valuable in the field of technology.
+                </p>
+              </li>
+              <li class="timeline-item mb-5">
+                <span class="timeline-icon">
+                  <i class="bx bxs-graduation"></i>
+                </span>
+                <h5 class="fw-bold">BS IN INFORMATION SYSTEMS</h5>
+                <p class="text-muted fw-bold">Sorsogon State University - Bulan Campus</p>
+                <p class="mb-2">2020-2024</p>
+                <p class="text-muted info">
+                  I am currently an undergraduate student, where I am pursuing a Bachelor of Science in Information Systems. This academic program not only enhances my knowledge and passion for technology and information management but also aligns with my goal of becoming a frontend developer.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="page-title-no-pt">
+            <h2>Skills</h2>
+          </div>
+          <div class="container d-flex justify-content-center align-items-center flex-column">
+            <div class="page-title-sub py-5">
+              <h2>What I know</h2>
+            </div>
+            <div class="d-flex justify-content-center align-items-center flex-column">
+              <div class="current-skill-set d-flex justify-content-center flex-wrap gap-lg-0 gap-3">
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-html5 bx-lg bx-tada-hover"></i>
+                    <figcaption>HTML5</figcaption>
+                  </figure>
+                </div>
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-css3 bx-lg bx-tada-hover"></i>
+                    <figcaption>CSS3</figcaption>
+                  </figure>
+                </div>
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-javascript bx-lg bx-tada-hover"></i>
+                    <figcaption>JavaScript</figcaption>
+                  </figure>
+                </div>
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-bootstrap bx-lg bx-tada-hover"></i>
+                    <figcaption>Bootstrap5</figcaption>
+                  </figure>
+                </div>
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-sass bx-lg bx-tada-hover"></i>
+                    <figcaption>Sass</figcaption>
+                  </figure>
+                </div>
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-figma bx-lg bx-tada-hover"></i>
+                    <figcaption>Figma</figcaption>
+                  </figure>
+                </div>
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-git bx-lg bx-tada-hover"></i>
+                    <figcaption>Git</figcaption>
+                  </figure>
+                </div>
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-github bx-lg bx-tada-hover"></i>
+                    <figcaption>Github</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container d-flex justify-content-center align-items-center mt-3 flex-column">
+            <div class="page-title-sub py-5">
+              <h2>Planning to learn</h2>
+            </div>
+            <div class="d-flex justify-content-center align-items-center flex-column">
+              <div class="current-skill-set d-flex justify-content-center flex-wrap gap-lg-0 gap-3">
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-javascript bx-lg bx-tada-hover"></i>
+                    <figcaption>JavaScript</figcaption>
+                  </figure>
+                </div>
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-python bx-lg bx-tada-hover"></i>
+                    <figcaption>Python</figcaption>
+                  </figure>
+                </div>
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-react bx-lg bx-tada-hover"></i>
+                    <figcaption>React JS</figcaption>
+                  </figure>
+                </div>
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-nodejs bx-lg bx-tada-hover"></i>
+                    <figcaption>Node JS</figcaption>
+                  </figure>
+                </div>
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-vuejs bx-lg bx-tada-hover"></i>
+                    <figcaption>Vue JS</figcaption>
+                  </figure>
+                </div>
+                <div class="skill-item">
+                  <figure class="d-flex flex-column align-items-center justify-content-center gap-1">
+                    <i class="bx bxl-postgresql bx-lg bx-tada-hover"></i>
+                    <figcaption>Postgresql</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <!--Project section-->
+    <section class="portfolio-section" id="projects">
+      <div class="container d-flex justify-content-center align-items-center flex-column">
+        <div class="container py-5">
+          <div class="page-title mb-5">
+            <h2>Projects</h2>
+          </div>
+          <div class="project-title-sub mb-4">
+            <h5 class="project-title text-center w-100">
+              Discover My Creative Web Design & Frontend Mentor Projects
+            </h5>
+          </div>
+          <!-- PROJECT CONTENT 1 -->
+          <div class="project-content container d-flex justify-content-center align-items-center gap-3 py-3">
+            <img class="shadow-sm" src="/asset/img/projects/NFT Preview.jpg" alt="">
+            <div class="project-desc">
+              <p class="mb-1">NFT Preview Card</p>
+              <span>This HTML & CSS only challenge is perfect for anyone just starting out or anyone wanting a small project to play around with.</span>
+              <div class="project-link mt-3 d-flex align-items-center gap-2">
+                <a href="https://nft-preview-card-12.netlify.app/" target="_blank">
+                  <button class="go-to-preview" type="button">
+                    <span class="text">Live</span>
+                    <i class="bx bx-link-external"></i>
+                  </button>
+                </a>
+                <a href="https://github.com/jonexist/nft-preview-card" target="_blank">
+                  <button class="go-to-code" type="button">
+                    <span class="text">Code</span>
+                    <i class="bx bxl-github"></i>
+                  </button>
+                </a>
+              </div>
+              <div class="tech-used d-flex justify-content-end align-items-center gap-3">
+                <i class="bx bxl-html5 bx-sm"></i>
+                <i class="bx bxl-css3 bx-sm"></i>
+              </div>
+            </div>
+          </div>
+          <!-- PROJECT CONTENT 2 -->
+          <div class="project-content d-flex justify-content-center align-items-center gap-3 py-4">
+            <div class="project-desc">
+              <p class="mb-1">Order Summary</p>
+              <span>A perfect project for newbies who are starting to build confidence with layouts!</span>
+              <div class="project-link mt-3 d-flex align-items-center gap-2">
+                <a href="https://order-summary-13.netlify.app/" target="_blank">
+                  <button class="go-to-preview" type="button">
+                    <span class="text">Live</span>
+                    <i class="bx bx-link-external"></i>
+                  </button>
+                </a>
+                <a href="https://github.com/jonexist/order-summary" target="_blank">
+                  <button class="go-to-code" type="button">
+                    <span class="text">Code</span>
+                    <i class="bx bxl-github"></i>
+                  </button>
+                </a>
+              </div>
+              <div class="tech-used d-flex justify-content-end align-items-center gap-3">
+                <i class="bx bxl-html5 bx-sm"></i>
+                <i class="bx bxl-css3 bx-sm"></i>
+              </div>
+            </div>
+            <img class="shadow-sm" src="/asset/img/projects/Order Summary.jpg" alt="" srcset="">
+          </div>
+          <!-- PROJECT CONTENT 3 -->
+          <div class="project-content container d-flex justify-content-center align-items-center gap-3 py-4">
+            <img class="shadow-sm" src="/asset/img/projects/Stat Preview Card.jpg" alt="">
+            <div class="project-desc">
+              <p class="mb-1">Stats Preview Card</p>
+              <span>This is a great small challenge to help get you used to building to a design.</span>
+              <div class="project-link mt-3 d-flex align-items-center gap-2">
+                <a href="https://stats-preview-card-12.netlify.app/" target="_blank">
+                  <button class="go-to-preview" type="button">
+                    <span class="text">Live</span>
+                    <i class="bx bx-link-external"></i>
+                  </button>
+                </a>
+                <a href="https://github.com/jonexist/Stats-Preview-Card" target="_blank">
+                  <button class="go-to-code" type="button">
+                    <span class="text">Code</span>
+                    <i class="bx bxl-github"></i>
+                  </button>
+                </a>
+              </div>
+              <div class="tech-used d-flex justify-content-end align-items-center gap-3">
+                <i class="bx bxl-html5 bx-sm"></i>
+                <i class="bx bxl-css3 bx-sm"></i>
+              </div>
+            </div>
+          </div>
+          <!-- PROJECT CONTENT 4 -->
+          <div class="project-content d-flex justify-content-center align-items-center gap-3 py-4">
+            <div class="project-desc">
+              <p class="mb-1">Product Preview Card</p>
+              <span>This HTML & CSS-only challenge will be perfect for anyone starting to build responsive projects.</span>
+              <div class="project-link mt-3 d-flex align-items-center gap-2">
+                <a href="https://product-preview-card-14.netlify.app/" target="_blank">
+                  <button class="go-to-preview" type="button">
+                    <span class="text">Live</span>
+                    <i class="bx bx-link-external"></i>
+                  </button>
+                </a>
+                <a href="https://github.com/jonexist/product-preview-card" target="_blank">
+                  <button class="go-to-code" type="button">
+                    <span class="text">Code</span>
+                    <i class="bx bxl-github"></i>
+                  </button>
+                </a>
+              </div>
+              <div class="tech-used d-flex justify-content-end align-items-center gap-3">
+                <i class="bx bxl-html5 bx-sm"></i>
+                <i class="bx bxl-css3 bx-sm"></i>
+              </div>
+            </div>
+            <img class="shadow-sm" src="/asset/img/projects/Product Preview.jpg" alt="" srcset="">
+          </div>
+          <!-- PROJECT CONTENT 5 -->
+          <div class="project-content container d-flex justify-content-center align-items-center gap-3 py-4">
+            <img class="shadow-sm" src="/asset/img/projects/Profile Card.jpg" alt="">
+            <div class="project-desc">
+              <p class="mb-1">Profile Card</p>
+              <span>This is a perfect challenge to test your layout skills. The card layout doesn't shift, so it's also great for those that haven't dived into responsive websites yet!</span>
+              <div class="project-link mt-3 d-flex align-items-center gap-2">
+                <a href="https://profile-card-7iri.onrender.com/" target="_blank">
+                  <button class="go-to-preview" type="button">
+                    <span class="text">Live</span>
+                    <i class="bx bx-link-external"></i>
+                  </button>
+                </a>
+                <a href="https://github.com/jonexist/Profile-Card" target="_blank">
+                  <button class="go-to-code" type="button">
+                    <span class="text">Code</span>
+                    <i class="bx bxl-github"></i>
+                  </button>
+                </a>
+              </div>
+              <div class="tech-used d-flex justify-content-end align-items-center gap-3">
+                <i class="bx bxl-html5 bx-sm"></i>
+                <i class="bx bxl-css3 bx-sm"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Contact section-->
+    <section class="portfolio-section" id="contact">
+
+    </section>
+    <!--Footer section-->
+    <section class="footer">
+      
+    </section>
+  </main>
+</body>
+</html>
