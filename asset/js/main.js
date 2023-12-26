@@ -178,3 +178,10 @@ const resizeOps = () => {
 
 resizeOps();
 window.addEventListener("resize", resizeOps);
+
+//Redirect onclick
+function redirectContact() {
+  const contactPage = "#contact";
+
+  window.location.href = contactPage;
+}
