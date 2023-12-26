@@ -2,7 +2,7 @@
 /*File import*/
 @import 'mixins';
 /*SCSS Variables (Font sizes)*/
-$hero-heading-font-size: clamp(1.5rem, 7vw, 3.8rem);
+$hero-heading-font-size: clamp(1.7rem, 7vw, 3.8rem);
 $hero-intro-font-size: clamp(1.2rem, 5vw, 1.8rem);
 $heading-font-size: 1.563rem;
 $sub-heading-font-size: 1.125rem;
@@ -57,7 +57,7 @@ $nav-height: 5rem;
 }
 .portfolio-section {
   width: 100% !important;
-  padding: 0 5%;
+  padding: 0 4%;
 }
 /*Navigation design*/
 .primary-header {
@@ -260,7 +260,7 @@ $nav-height: 5rem;
 }
 /*Hero section design end*/
 /*About section design*/
-.page-title {
+.page-title-about {
   padding-top: $nav-height;
   h2 {
     font-size: $heading-font-size;
@@ -404,13 +404,13 @@ $nav-height: 5rem;
     font-weight: 500;
     position: relative;
     width: max-content;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     font-size: $sub-heading-font-size;
   }
   .project-title::before {
     content: '';
     position: absolute;
-    width: 5rem;
+    width: 4rem;
     height: 3px;
     bottom: 0;
     left: calc(50% - 2.5rem);
@@ -569,8 +569,5 @@ $nav-height: 5rem;
         font-size: $span-font-size;
       }
     }
-  }
-  .p-btn {
-    font-size: $button-font-size;
   }
 }

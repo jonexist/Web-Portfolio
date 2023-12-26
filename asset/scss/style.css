@@ -50,7 +50,7 @@
 
 .portfolio-section {
   width: 100% !important;
-  padding: 0 5%;
+  padding: 0 4%;
 }
 
 /*Navigation design*/
@@ -204,7 +204,7 @@
 }
 .hero-cta .my-role {
   font-weight: 800;
-  font-size: clamp(1.5rem, 7vw, 3.8rem);
+  font-size: clamp(1.7rem, 7vw, 3.8rem);
   color: #263138 !important;
   text-transform: uppercase;
 }
@@ -275,17 +275,17 @@
 
 /*Hero section design end*/
 /*About section design*/
-.page-title {
+.page-title-about {
   padding-top: 5rem;
 }
-.page-title h2 {
+.page-title-about h2 {
   font-size: 1.563rem;
   font-weight: bold;
   padding-bottom: 20px;
   position: relative;
   color: #445964;
 }
-.page-title h2::after {
+.page-title-about h2::after {
   content: "";
   position: absolute;
   display: block;
@@ -430,13 +430,13 @@
   position: relative;
   width: -moz-max-content;
   width: max-content;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   font-size: 1.125rem;
 }
 .project-title-sub .project-title::before {
   content: "";
   position: absolute;
-  width: 5rem;
+  width: 4rem;
   height: 3px;
   bottom: 0;
   left: calc(50% - 2.5rem);
@@ -597,8 +597,5 @@
   }
   .link-contact .cta span {
     font-size: 0.713rem;
-  }
-  .p-btn {
-    font-size: 0.875rem;
   }
 }/*# sourceMappingURL=style.css.map */
