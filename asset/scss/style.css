@@ -51,10 +51,20 @@
   margin: 0 !important;
 }
 
-.portfolio-section {
+#home {
+  height: 100dvh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+#about-me,
+#projects,
+#contact {
   min-height: 100vh;
   padding-top: var(--navbar-height);
-  width: 100%;
+}
+
+.portfolio-section {
+  width: 100% !important;
   padding: 0 7%;
 }
 
@@ -221,9 +231,12 @@
 .link-contact .cta span {
   padding-bottom: 7px;
   letter-spacing: 4px;
-  font-size: 14px !important;
   padding-right: 15px;
   text-transform: uppercase;
+  position: relative;
+  color: var(--primary-color);
+  padding-bottom: 10px;
+  font-size: 14px;
 }
 .link-contact .cta svg {
   transform: translateX(-8px);
@@ -234,11 +247,6 @@
 }
 .link-contact .cta:active svg {
   transform: scale(0.9);
-}
-.link-contact .hover-underline-animation {
-  position: relative;
-  color: black;
-  padding-bottom: 20px;
 }
 .link-contact .hover-underline-animation:after {
   content: "";
@@ -589,5 +597,8 @@
     justify-content: center;
     align-items: center;
     width: 100% !important;
+  }
+  .link-contact .cta span {
+    font-size: 11px;
   }
 }/*# sourceMappingURL=style.css.map */

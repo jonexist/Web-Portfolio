@@ -170,3 +170,11 @@ skillSet.forEach((skill, index) => {
     })
   }
 })
+
+//Auto fit content on screen
+const resizeOps = () => {
+  document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+};
+
+resizeOps();
+window.addEventListener("resize", resizeOps);
