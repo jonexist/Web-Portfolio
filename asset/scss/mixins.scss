@@ -13,3 +13,8 @@
   flex-direction: column;
   justify-content: space-between;
 }
+@mixin flex-reverse {
+  display: flex;
+  flex-flow: column-reverse;
+  justify-content: center;
+}

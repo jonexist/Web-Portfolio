@@ -94,7 +94,7 @@
       </div>
     </section>
     <!--About me section-->
-    <section class="portfolio-section d-flex justify-content-center align-items-center flex-column pt-1" id="about-me">
+    <section class="portfolio-section d-flex justify-content-center align-items-center flex-column" id="about-me">
         <div class="container">
           <div class="page-title-about">
             <h2>About me</h2>
@@ -265,7 +265,7 @@
     <section class="portfolio-section" id="projects">
       <div class="container d-flex justify-content-center align-items-center flex-column">
         <div class="container">
-          <div class="page-title-no-pt mb-5">
+          <div class="page-title-no-pt mb-5 mt-3">
             <h2>Projects</h2>
           </div>
           <div class="project-title-sub mb-4">
@@ -407,8 +407,47 @@
       </div>
     </section>
     <!--Contact section-->
-    <section class="portfolio-section" id="contact">
-
+    <section class="portfolio-section d-flex align-items-center" id="contact">
+      <div class="container">
+        <div class="page-title-no-pt mb-5">
+          <h2>Contact me</h2>
+        </div>
+        <div class="d-flex justify-content-center align-items-start flex-lg-row flex-column gap-lg-5 pt-lg-5 pb-5 pt-3">
+          <div class="form-details col-lg-7 ml-auto">
+            <h3 class="mb-2">Get in touch</h3>
+            <p>Whether you have a project in mind, a question to ask, or just want to say hello, I'd love to hear from you. Please feel free to message me, and I'll get back to you as soon as possible.</p>
+            <div class="contact-details my-4 d-flex flex-column gap-3">
+              <div class="gmail d-flex align-items-center gap-3">
+                <i class="bx bx-envelope bx-sm text-center"></i>
+                <a href="mailto:jgoboli2@gmail.com">jgoboli2@gmail.com</a>
+              </div>
+              <div class="phone d-flex align-items-center gap-3">
+                <i class="bx bx-phone-call bx-sm text-center"></i>
+                <a href="tel:+639461558519">+639461558519</a>
+              </div>
+              <div class="address d-flex align-items-center gap-3">
+                <i class="bx bx-current-location bx-sm text-center"></i>
+                <span>Bulan, Sorsogon, 4706, Philippines</span>
+              </div>
+            </div>
+          </div>
+          <form class="form-group ml-auto rounded-1 d-flex flex-column gap-4 w-100">
+            <div class="form-group-field">
+              <input type="text" class="form-control underlined" id="company" placeholder="Company Name" required>
+            </div>
+            <div class="form-group-field">
+                <input type="text" class="form-control underlined" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group-field">
+                <input type="email" class="form-control underlined" id="email" placeholder="Email" required>
+            </div>
+            <div class="form-group-field">
+                <textarea class="form-control underlined" id="message" rows="3" placeholder="Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
     </section>
     <!--Footer section-->
     <section class="footer">

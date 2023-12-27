@@ -317,6 +317,7 @@ $nav-height: 5rem;
   }
   h3 {
     font-size: $sub-heading-font-size !important;
+    font-weight: 700;
   }
 }
 .p-btn {
@@ -514,6 +515,60 @@ $nav-height: 5rem;
   }
 }
 /*Project design end*/
+/*Contact design*/
+.form-details {
+  p {
+    font-size: $paragraph-font-size;
+    text-align: justify;
+    color: $secondary-color;
+  }
+  h3 {
+    font-size: $sub-heading-font-size !important;
+    font-weight: 700;
+    color: $secondary-color;
+    text-transform: uppercase;
+  }
+}
+.contact-details {
+  i,
+  a,
+  span {
+    color: $nav-link-color;
+    font-size: $paragraph-font-size;
+  }
+}
+.contact-details div:first-child a {
+  color: rgb(67, 149, 174) !important;
+}
+.contact-details div:first-child a:hover {
+  color: rgb(35, 167, 207) !important;
+  text-decoration: underline !important;
+}
+.underlined {
+  border: none !important;
+  border-bottom: 1px solid $onhover-color-2 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding-left: 0 !important;
+  color: $primary-color !important;
+  font-weight: 400 !important;
+}
+.underlined:focus {
+  border-color: $primary-color !important;
+  box-shadow: none !important;
+}
+.underlined::placeholder {
+  color: $light-color !important;
+}
+.form-group {
+  button {
+    background-color: $primary-color !important;
+    border: none !important;
+    width: 30%;
+    border-radius: 25px;
+  }
+}
+/*Contact design end*/
 /*Media Query*/
 @media (max-width: 760px) {
   .nav-list {
@@ -568,6 +623,11 @@ $nav-height: 5rem;
       span {
         font-size: $span-font-size;
       }
+    }
+  }
+  .form-group {
+    button {
+      width: 100%;
     }
   }
 }

@@ -335,6 +335,7 @@
 }
 .content h3 {
   font-size: 1.125rem !important;
+  font-weight: 700;
 }
 
 .p-btn {
@@ -545,6 +546,66 @@
 }
 
 /*Project design end*/
+/*Contact design*/
+.form-details p {
+  font-size: 1rem;
+  text-align: justify;
+  color: #445964;
+}
+.form-details h3 {
+  font-size: 1.125rem !important;
+  font-weight: 700;
+  color: #445964;
+  text-transform: uppercase;
+}
+
+.contact-details i,
+.contact-details a,
+.contact-details span {
+  color: rgba(38, 49, 56, 0.7);
+  font-size: 1rem;
+}
+
+.contact-details div:first-child a {
+  color: rgb(67, 149, 174) !important;
+}
+
+.contact-details div:first-child a:hover {
+  color: rgb(35, 167, 207) !important;
+  text-decoration: underline !important;
+}
+
+.underlined {
+  border: none !important;
+  border-bottom: 1px solid #9b9b9b !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding-left: 0 !important;
+  color: #263138 !important;
+  font-weight: 400 !important;
+}
+
+.underlined:focus {
+  border-color: #263138 !important;
+  box-shadow: none !important;
+}
+
+.underlined::-moz-placeholder {
+  color: #8c9fa9 !important;
+}
+
+.underlined::placeholder {
+  color: #8c9fa9 !important;
+}
+
+.form-group button {
+  background-color: #263138 !important;
+  border: none !important;
+  width: 30%;
+  border-radius: 25px;
+}
+
+/*Contact design end*/
 /*Media Query*/
 @media (max-width: 760px) {
   .nav-list {
@@ -597,5 +658,8 @@
   }
   .link-contact .cta span {
     font-size: 0.713rem;
+  }
+  .form-group button {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
