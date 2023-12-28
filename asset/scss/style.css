@@ -343,6 +343,7 @@
   color: #FBFBFB;
   font-size: 1rem;
   font-weight: 500;
+  text-transform: uppercase;
   height: 45px;
   border: none;
   outline: none !important;
@@ -620,6 +621,29 @@
   transition: all 0.2s ease-in-out !important;
 }
 
+.submit-btn {
+  background-color: #263138;
+  color: #FBFBFB;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 25% !important;
+  height: 45px;
+  border: none;
+  outline: none !important;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.submit:hover {
+  background-color: #35434D;
+  transition: all 0.2s ease-in-out;
+}
+
 /*Contact design end*/
 /*Footer design*/
 .footer {
@@ -704,5 +728,11 @@
   }
   .form-group button {
     width: 100%;
+  }
+  .submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -325,6 +325,7 @@ $nav-height: 5rem;
   color: $white-bg;
   font-size: $paragraph-font-size;
   font-weight: 500;
+  text-transform: uppercase;
   height: 45px;
   border: none;
   outline: none !important;
@@ -581,6 +582,25 @@ $nav-height: 5rem;
     transition: all 0.2s ease-in-out !important;
   }
 }
+.submit-btn {
+  background-color: $primary-color;
+  color: $white-bg;
+  font-size: $paragraph-font-size;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 25% !important;
+  height: 45px;
+  border: none;
+  outline: none !important;
+  border-radius: 5px;
+  cursor: pointer;
+  @include flex-center-1 ();
+  gap: 0.5rem;
+}
+.submit:hover {
+  background-color: $onhover-color-1;
+  transition: all 0.2s ease-in-out;
+}
 /*Contact design end*/
 /*Footer design*/
 .footer {
@@ -669,5 +689,9 @@ $nav-height: 5rem;
     button {
       width: 100%;
     }
+  }
+  .submit-btn {
+    @include flex-center-1 ();
+    width: 100% !important;
   }
 }
