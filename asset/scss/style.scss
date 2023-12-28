@@ -546,10 +546,11 @@ $nav-height: 5rem;
 }
 .underlined {
   border: none !important;
-  border-bottom: 1px solid $onhover-color-2 !important;
-  border-radius: 0 !important;
+  border-bottom: 2px solid $onhover-color-2 !important;
+  border-left: 2px solid $onhover-color-2 !important;
+  border-radius: 5px 0px 0px 5px !important;
   box-shadow: none !important;
-  padding-left: 0 !important;
+  padding-left: 0.5rem !important;
   color: $primary-color !important;
   font-weight: 400 !important;
 }
@@ -561,14 +562,53 @@ $nav-height: 5rem;
   color: $light-color !important;
 }
 .form-group {
-  button {
+  .p-btn {
     background-color: $primary-color !important;
-    border: none !important;
+    color: $white-bg !important;
+    font-size: $paragraph-font-size !important;
+    font-weight: 500;
+    height: 45px;
     width: 30%;
-    border-radius: 25px;
+    border: none !important;
+    outline: none !important;
+    border-radius: 5px;
+    cursor: pointer;
+    @include flex-center-1 ();
+    gap: 0.5rem;
+  }
+  .p-btn:hover {
+    background-color: $onhover-color-1 !important;
+    transition: all 0.2s ease-in-out !important;
   }
 }
 /*Contact design end*/
+/*Footer design*/
+.footer {
+  @include flex-center-1 ();
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: $primary-color;
+  padding: 1rem;
+}
+.social-media-footer {
+  i {
+    color: $light-color;
+    padding: 0.8rem;
+    border-radius: 50%;
+    transition: $transition-175s
+  }
+  i:hover {
+    color: $white-bg;
+    background-color: $secondary-color;
+  }
+}
+.copyright {
+  span {
+    font-size: $span-font-size + 0.3rem;
+    color: $light-color;
+  }
+}
+/*Footer design end*/
 /*Media Query*/
 @media (max-width: 760px) {
   .nav-list {
