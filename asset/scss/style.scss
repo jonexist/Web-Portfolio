@@ -676,6 +676,7 @@ $nav-height: 5rem;
     button {
       @include flex-center-1 ();
       width: 100% !important;
+      font-size: 0.9em !important;
     }
   }
   .link-contact {
@@ -693,5 +694,6 @@ $nav-height: 5rem;
   .submit-btn {
     @include flex-center-1 ();
     width: 100% !important;
+    font-size: 0.9em !important;
   }
 }
