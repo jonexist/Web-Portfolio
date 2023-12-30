@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const subject = document.getElementById('subject').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
-    
+
     // Use EmailJS to send email
     emailjs.send('service_k84oe4w', 'template_zgokmbr', {
       name,
