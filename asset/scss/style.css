@@ -79,7 +79,7 @@
 }
 .nav-container .nav-logo .owner {
   font-weight: 900;
-  font-size: 1.563rem;
+  font-size: 1.63rem;
   color: #445964 !important;
 }
 
@@ -278,7 +278,7 @@
   padding-top: 5rem;
 }
 .page-title-about h2 {
-  font-size: 1.563rem;
+  font-size: 1.4rem;
   font-weight: bold;
   padding-bottom: 20px;
   position: relative;
@@ -296,7 +296,7 @@
 }
 
 .page-title-no-pt h2 {
-  font-size: 1.563rem;
+  font-size: 1.4rem;
   font-weight: bold;
   padding-bottom: 20px;
   position: relative;
@@ -340,18 +340,13 @@
 .p-btn {
   background-color: #263138;
   color: #FBFBFB;
-  font-size: 1rem;
+  font-size: 1rem !important;
   font-weight: 500;
-  text-transform: uppercase;
   height: 45px;
   border: none;
   outline: none !important;
   border-radius: 5px;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .p-btn:hover {
@@ -448,14 +443,25 @@
 .project-content {
   border-bottom: 1px solid #445964;
 }
+.project-content img {
+  width: 25rem;
+  height: auto;
+}
 
 .project-content:last-child {
   border: none;
 }
 
-.project-content img {
+.low-code-project {
+  border-bottom: 1px solid #445964;
+}
+.low-code-project img {
   width: 25rem;
   height: auto;
+}
+
+.low-code-project:last-child {
+  border: none;
 }
 
 .project-desc p {
@@ -463,6 +469,10 @@
   font-weight: 600;
   font-size: 1.125rem;
   position: relative;
+}
+.project-desc span {
+  color: #445964 !important;
+  text-align: justify !important;
 }
 
 .go-to-preview {
@@ -599,50 +609,6 @@
   color: #8c9fa9 !important;
 }
 
-.form-group .p-btn {
-  background-color: #263138 !important;
-  color: #FBFBFB !important;
-  font-size: 1rem !important;
-  font-weight: 500;
-  height: 45px;
-  width: 30%;
-  border: none !important;
-  outline: none !important;
-  border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-.form-group .p-btn:hover {
-  background-color: #35434D !important;
-  transition: all 0.2s ease-in-out !important;
-}
-
-.submit-btn {
-  background-color: #263138;
-  color: #FBFBFB;
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  width: 25% !important;
-  height: 45px;
-  border: none;
-  outline: none !important;
-  border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.submit:hover {
-  background-color: #35434D;
-  transition: all 0.2s ease-in-out;
-}
-
 /*Contact design end*/
 /*Footer design*/
 .footer {
@@ -695,11 +661,21 @@
     display: flex;
     flex-direction: column;
   }
+  .low-code-project {
+    display: flex;
+    flex-direction: column;
+  }
   /* place the image at to top in even number lists */
   .project-content:nth-child(even) {
     flex-direction: column-reverse;
   }
+  .low-code-project:nth-child(odd) {
+    flex-direction: column-reverse !important;
+  }
   .project-content img {
+    width: 100%;
+  }
+  .low-code-project img {
     width: 100%;
   }
   .social-media {
@@ -714,26 +690,24 @@
     font-size: 1.5rem;
   }
   .mobile_nav a {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .download-btn button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100% !important;
-    font-size: 0.9em !important;
+  }
+  .message-btn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
   }
   .link-contact .cta span {
     font-size: 0.713rem;
   }
   .form-group button {
     width: 100%;
-  }
-  .submit-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100% !important;
-    font-size: 0.9em !important;
   }
 }/*# sourceMappingURL=style.css.map */

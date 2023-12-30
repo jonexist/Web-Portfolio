@@ -4,7 +4,7 @@
 /*SCSS Variables (Font sizes)*/
 $hero-heading-font-size: clamp(1.7rem, 7vw, 3.8rem);
 $hero-intro-font-size: clamp(1.2rem, 5vw, 1.8rem);
-$heading-font-size: 1.563rem;
+$heading-font-size: 1.4rem;
 $sub-heading-font-size: 1.125rem;
 $button-font-size: 0.875rem;
 $paragraph-font-size: 1rem;
@@ -80,7 +80,7 @@ $nav-height: 5rem;
     }
     .owner {
       font-weight: 900;
-      font-size: $heading-font-size;
+      font-size: $heading-font-size + 0.23rem;
       color: $secondary-color !important;
     }
   }
@@ -322,16 +322,13 @@ $nav-height: 5rem;
 .p-btn {
   background-color: $primary-color;
   color: $white-bg;
-  font-size: $paragraph-font-size;
+  font-size: $paragraph-font-size !important;
   font-weight: 500;
-  text-transform: uppercase;
   height: 45px;
   border: none;
   outline: none !important;
   border-radius: 5px;
   cursor: pointer;
-  @include flex-center-1 ();
-  gap: 0.5rem;
 }
 .p-btn:hover {
   background-color: $onhover-color-1;
@@ -421,13 +418,23 @@ $nav-height: 5rem;
 }
 .project-content {
   border-bottom: 1px solid $secondary-color;
+  img {
+    width: 25rem;
+    height: auto;
+  }
 }
 .project-content:last-child {
   border: none;
 }
-.project-content img {
-  width: 25rem;
-  height: auto;
+.low-code-project {
+  border-bottom: 1px solid $secondary-color;
+  img {
+    width: 25rem;
+    height: auto;
+  }
+}
+.low-code-project:last-child {
+  border: none;
 }
 .project-desc {
   p {
@@ -435,6 +442,10 @@ $nav-height: 5rem;
     font-weight: 600;
     font-size: $sub-heading-font-size;
     position: relative;
+  }
+  span {
+    color: $secondary-color !important;
+    text-align: justify !important;
   }
 }
 .go-to-preview {
@@ -561,45 +572,6 @@ $nav-height: 5rem;
 .underlined::placeholder {
   color: $light-color !important;
 }
-.form-group {
-  .p-btn {
-    background-color: $primary-color !important;
-    color: $white-bg !important;
-    font-size: $paragraph-font-size !important;
-    font-weight: 500;
-    height: 45px;
-    width: 30%;
-    border: none !important;
-    outline: none !important;
-    border-radius: 5px;
-    cursor: pointer;
-    @include flex-center-1 ();
-    gap: 0.5rem;
-  }
-  .p-btn:hover {
-    background-color: $onhover-color-1 !important;
-    transition: all 0.2s ease-in-out !important;
-  }
-}
-.submit-btn {
-  background-color: $primary-color;
-  color: $white-bg;
-  font-size: $paragraph-font-size;
-  font-weight: 500;
-  text-transform: uppercase;
-  width: 25% !important;
-  height: 45px;
-  border: none;
-  outline: none !important;
-  border-radius: 5px;
-  cursor: pointer;
-  @include flex-center-1 ();
-  gap: 0.5rem;
-}
-.submit:hover {
-  background-color: $onhover-color-1;
-  transition: all 0.2s ease-in-out;
-}
 /*Contact design end*/
 /*Footer design*/
 .footer {
@@ -650,12 +622,26 @@ $nav-height: 5rem;
     display: flex;
     flex-direction: column;
   }
+  .low-code-project {
+    display: flex;
+    flex-direction: column;
+  }
   /* place the image at to top in even number lists */
   .project-content:nth-child(even) {
     flex-direction: column-reverse;
   }
-  .project-content img {
-    width: 100%;
+  .low-code-project:nth-child(odd) {
+    flex-direction: column-reverse !important;
+  }
+  .project-content {
+    img {
+      width: 100%;
+    }
+  }
+  .low-code-project {
+    img {
+      width: 100%;
+    }
   }
   .social-media {
     width: 50%;
@@ -669,13 +655,18 @@ $nav-height: 5rem;
     font-size: 1.5rem;
   }
   .mobile_nav a {
-    font-size: $paragraph-font-size;
+    font-size: $nav-font-size;
   }
   .download-btn {
     button {
       @include flex-center-1 ();
       width: 100% !important;
-      font-size: 0.9em !important;
+    }
+  }
+  .message-btn {
+    button {
+      @include flex-center-1 ();
+      width: 100% !important;
     }
   }
   .link-contact {
@@ -689,10 +680,5 @@ $nav-height: 5rem;
     button {
       width: 100%;
     }
-  }
-  .submit-btn {
-    @include flex-center-1 ();
-    width: 100% !important;
-    font-size: 0.9em !important;
   }
 }
