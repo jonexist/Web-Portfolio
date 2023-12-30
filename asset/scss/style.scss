@@ -24,26 +24,44 @@ $transition-175s: all 175ms ease-in-out;
 $nav-height: 5rem;
 * {
   font-family: 'Outfit', sans-serif !important;
-    html,
-    body {
-    scroll-behavior: smooth;
-    width: 100% !important;
-    overflow-x: hidden !important;
-    background-color: $white-bg;
-      h1,
-      a,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      p,
-      span {
-        color: $secondary-color;
-        text-decoration: none !important;
-        margin: 0 !important;
-      }
+  html,
+  body {
+  scroll-behavior: smooth;
+  width: 100% !important;
+  overflow-x: hidden !important;
+  background-color: $white-bg;
+    h1,
+    a,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span {
+      color: $secondary-color;
+      text-decoration: none !important;
+      margin: 0 !important;
     }
+  }
+  body {
+    --sb-track-color: #fbfbfb;
+    --sb-thumb-color: #445964;
+    --sb-size: 8px;
+    scrollbar-color:var(--sb-thumb-color) 
+                    var(--sb-track-color);
+  }
+  body::-webkit-scrollbar {
+    width: var(--sb-size)
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 10px;
+  }
+  body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 10px;
+  }
 }
 #home {
   height: 100dvh;
