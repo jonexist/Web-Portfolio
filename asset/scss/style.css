@@ -6,50 +6,34 @@
 * {
   font-family: "Outfit", sans-serif !important;
 }
-* html,
-* body {
+
+html, body {
   scroll-behavior: smooth;
   width: 100% !important;
   overflow-x: hidden !important;
   background-color: #FBFBFB;
 }
-* html h1,
-* html a,
-* html h2,
-* html h3,
-* html h4,
-* html h5,
-* html h6,
-* html p,
-* html span,
-* body h1,
-* body a,
-* body h2,
-* body h3,
-* body h4,
-* body h5,
-* body h6,
-* body p,
-* body span {
+html h1, html a, html h2, html h3, html h4, html h5, html h6, html p, html span, body h1, body a, body h2, body h3, body h4, body h5, body h6, body p, body span {
   color: #445964;
   text-decoration: none !important;
   margin: 0 !important;
 }
-* body {
-  --sb-track-color: #fbfbfb;
-  --sb-thumb-color: #445964;
-  --sb-size: 8px;
-  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+
+body {
+  scrollbar-color: #445964 #FBFBFB;
 }
-* body::-webkit-scrollbar {
-  width: var(--sb-size);
+
+body::-webkit-scrollbar {
+  width: 8px;
 }
-* body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
+
+body::-webkit-scrollbar-track {
+  background: #FBFBFB;
   border-radius: 10px;
 }
-* body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
+
+body::-webkit-scrollbar-thumb {
+  background: #445964;
   border-radius: 10px;
 }
 
