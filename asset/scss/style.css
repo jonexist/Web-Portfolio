@@ -65,11 +65,10 @@ body::-webkit-scrollbar-thumb {
   box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.navbar {
+  padding: 0 !important;
 }
+
 .nav-container .nav-logo {
   display: flex;
   align-items: center;
@@ -83,34 +82,30 @@ body::-webkit-scrollbar-thumb {
   font-size: 1.63rem;
   color: #445964 !important;
 }
-
-.nav-list ul {
+.nav-container .nav-list ul {
   display: flex;
   gap: 2rem;
 }
-.nav-list li {
+.nav-container .nav-list li {
   list-style: none;
 }
-.nav-list a {
+.nav-container .nav-list a {
   font-size: 0.9rem;
   color: #445964;
   font-weight: 600;
   text-transform: uppercase;
 }
-
-.nav-link {
+.nav-container .nav-link {
   display: inline-block;
   position: relative;
   color: rgba(38, 49, 56, 0.7) !important;
   border-radius: 0 !important;
 }
-
-.nav-link.active {
+.nav-container .nav-link.active {
   background-color: transparent !important;
   color: #263138 !important;
 }
-
-.nav-link::after {
+.nav-container .nav-link::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -122,8 +117,7 @@ body::-webkit-scrollbar-thumb {
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
-
-.nav-link:hover::after {
+.nav-container .nav-link:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -255,7 +249,6 @@ body::-webkit-scrollbar-thumb {
   right: 1rem;
   bottom: 1rem;
 }
-
 .social-media i {
   color: rgba(38, 49, 56, 0.7);
   padding: 0.8rem;
@@ -275,9 +268,6 @@ body::-webkit-scrollbar-thumb {
 
 /*Hero section design end*/
 /*About section design*/
-.page-title-about {
-  padding-top: 5rem;
-}
 .page-title-about h2 {
   font-size: 1.4rem;
   font-weight: bold;
