@@ -138,7 +138,7 @@ function downloadCV() {
   a.href = filePath;
   
   // Set the download attribute with the desired file name
-  a.download = 'Goboli CV.pdf'; // Update the file name accordingly
+  a.download = 'Goboli Resume.pdf'; // Update the file name accordingly
   
   // Append the anchor element to the document body
   document.body.appendChild(a);
