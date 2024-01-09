@@ -24,7 +24,16 @@ doc.addEventListener("click", (event) => {
   }
 });
 
-/*Active navigation*/
+// Activate Scrollspy
+// const mainScrollSpy = new bootstrap.ScrollSpy(document.querySelector('main'), {
+//   target: '#navigation'
+// });
+document.addEventListener('DOMContentLoaded', function () {
+  const mainScrollSpy = new bootstrap.ScrollSpy(document.body, {
+    target: '#navigation'
+  });
+});
+
 const navbar = doc.querySelector('.primary-header')
 const navLinks = doc.querySelectorAll(['.nav-link', '.nav-logo', '.link-cta', '.to-top'])
 
@@ -39,10 +48,6 @@ window.addEventListener('scroll', () => {
 navLinks.forEach((link) => {
   link.addEventListener('click', e => {
     e.preventDefault()
-
-    navLinks.forEach((link) => link.classList.remove('active'))
-    link.classList.add('active')
-
     const target = link.getAttribute('href')
     const duration = 500
     smoothScroll(target, duration)
@@ -74,6 +79,7 @@ function smoothScroll(target, duration) {
   }
   requestAnimationFrame(animation)
 }
+
 /*Code for typewriter effects*/
 let TxtType = function (el, toRotate, period) {
   this.toRotate = toRotate;
@@ -185,7 +191,10 @@ function resetForm() {
     document.getElementById(id).value = '';
   });
 };
+
 //Email Js code
+emailjs.init('FjMleEN7Kptej6Rej');
+
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contact-form');
 
