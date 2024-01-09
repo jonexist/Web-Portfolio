@@ -2,7 +2,7 @@
 /*File import*/
 @import 'mixins';
 /*SCSS Variables (Font sizes)*/
-$hero-heading-font-size: clamp(1.7rem, 7vw, 3.8rem);
+$hero-heading-font-size: clamp(1.2rem, 7vw, 3rem);
 $hero-intro-font-size: clamp(1.2rem, 5vw, 1.8rem);
 $heading-font-size: 1.4rem;
 $sub-heading-font-size: 1.125rem;
@@ -60,10 +60,7 @@ body::-webkit-scrollbar-thumb {
 #projects,
 #contact {
   min-height: 100vh;
-  padding-top: $nav-height;
-}
-.portfolio-section {
-  width: 100% !important;
+  padding: $nav-height 3% 0 !important;
 }
 /*Navigation design*/
 .primary-header {
@@ -114,11 +111,14 @@ body::-webkit-scrollbar-thumb {
     color: $nav-link-color !important;
     border-radius: 0 !important;
   }
-  .nav-link.active {
-    background-color: transparent !important;
-    color: $primary-color !important;
+  .nav-pills .nav-link.active {
+    background-color: transparent !important; 
+    color: $primary-color !important; 
+    font-weight: 600 !important;
   }
-  .nav-link::after {
+  .nav-link::after,
+  .nav-link.active::after,
+  .nav-link:hover::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -126,13 +126,19 @@ body::-webkit-scrollbar-thumb {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: $onhover-color-1;
+    background-color: $onhover-color-1; /* Replace with your actual color */
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
+
+  .nav-link.active::after,
   .nav-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  }
+  .nav-link:hover {
+    color: $primary-color !important;
+    transition: 0.1s ease-in-out;
   }
 }
 /*mobile nav*/
@@ -153,9 +159,6 @@ body::-webkit-scrollbar-thumb {
   overflow-x: hidden;
   transition: width 0.3s ease 0s;
   a:hover {
-    color: $onhover-color-2 !important;
-  }
-  a:active {
     color: $onhover-color-2 !important;
   }
 }
@@ -609,23 +612,7 @@ body::-webkit-scrollbar-thumb {
 }
 /*Footer design end*/
 /*Media Query*/
-@media (max-width: 760px) {
-  .nav-list {
-    display: none;
-  }
-  .mobile_nav .nav-link {
-    width: max-content;
-    color: $onhover-color-2 !important;
-  }
-  .mobile_nav .nav-link:hover {
-    color: $white-bg !important;
-  }
-  .mobile_nav .nav-link:hover::after {
-    background-color: $white-bg !important;
-  }
-  .menu-cta {
-    display: inherit;
-  }
+@media (max-width: 990px) {
   .project-content {
     display: flex;
     flex-direction: column;
@@ -650,6 +637,25 @@ body::-webkit-scrollbar-thumb {
     img {
       width: 100%;
     }
+  }
+}
+
+@media (max-width: 760px) {
+  .nav-list {
+    display: none;
+  }
+  .mobile_nav .nav-link {
+    width: max-content;
+    color: $onhover-color-2 !important;
+  }
+  .mobile_nav .nav-link:hover {
+    color: $white-bg !important;
+  }
+  .mobile_nav .nav-link:hover::after {
+    background-color: $white-bg !important;
+  }
+  .menu-cta {
+    display: inherit;
   }
   .social-media {
     width: 50%;

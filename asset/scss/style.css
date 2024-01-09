@@ -46,11 +46,7 @@ body::-webkit-scrollbar-thumb {
 #projects,
 #contact {
   min-height: 100vh;
-  padding-top: 5rem;
-}
-
-.portfolio-section {
-  width: 100% !important;
+  padding: 5rem 3% 0 !important;
 }
 
 /*Navigation design*/
@@ -101,11 +97,14 @@ body::-webkit-scrollbar-thumb {
   color: rgba(38, 49, 56, 0.7) !important;
   border-radius: 0 !important;
 }
-.nav-container .nav-link.active {
+.nav-container .nav-pills .nav-link.active {
   background-color: transparent !important;
   color: #263138 !important;
+  font-weight: 600 !important;
 }
-.nav-container .nav-link::after {
+.nav-container .nav-link::after,
+.nav-container .nav-link.active::after,
+.nav-container .nav-link:hover::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -113,13 +112,18 @@ body::-webkit-scrollbar-thumb {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #35434D;
+  background-color: #35434D; /* Replace with your actual color */
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
+.nav-container .nav-link.active::after,
 .nav-container .nav-link:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+.nav-container .nav-link:hover {
+  color: #263138 !important;
+  transition: 0.1s ease-in-out;
 }
 
 /*mobile nav*/
@@ -142,9 +146,6 @@ body::-webkit-scrollbar-thumb {
   transition: width 0.3s ease 0s;
 }
 .overlay a:hover {
-  color: #9b9b9b !important;
-}
-.overlay a:active {
   color: #9b9b9b !important;
 }
 
@@ -198,7 +199,7 @@ body::-webkit-scrollbar-thumb {
 }
 .hero-cta .my-role {
   font-weight: 800;
-  font-size: clamp(1.7rem, 7vw, 3.8rem);
+  font-size: clamp(1.2rem, 7vw, 3rem);
   color: #263138 !important;
   text-transform: uppercase;
 }
@@ -630,24 +631,7 @@ body::-webkit-scrollbar-thumb {
 
 /*Footer design end*/
 /*Media Query*/
-@media (max-width: 760px) {
-  .nav-list {
-    display: none;
-  }
-  .mobile_nav .nav-link {
-    width: -moz-max-content;
-    width: max-content;
-    color: #9b9b9b !important;
-  }
-  .mobile_nav .nav-link:hover {
-    color: #FBFBFB !important;
-  }
-  .mobile_nav .nav-link:hover::after {
-    background-color: #FBFBFB !important;
-  }
-  .menu-cta {
-    display: inherit;
-  }
+@media (max-width: 990px) {
   .project-content {
     display: flex;
     flex-direction: column;
@@ -668,6 +652,25 @@ body::-webkit-scrollbar-thumb {
   }
   .low-code-project img {
     width: 100%;
+  }
+}
+@media (max-width: 760px) {
+  .nav-list {
+    display: none;
+  }
+  .mobile_nav .nav-link {
+    width: -moz-max-content;
+    width: max-content;
+    color: #9b9b9b !important;
+  }
+  .mobile_nav .nav-link:hover {
+    color: #FBFBFB !important;
+  }
+  .mobile_nav .nav-link:hover::after {
+    background-color: #FBFBFB !important;
+  }
+  .menu-cta {
+    display: inherit;
   }
   .social-media {
     width: 50%;
