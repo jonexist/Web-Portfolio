@@ -1,3 +1,55 @@
+//Type writer
+let TxtType = function (el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function () {
+  let i = this.loopNum % this.toRotate.length;
+  let fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+  this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+  let that = this;
+  let delta = 200 - Math.random() * 100;
+  if (this.isDeleting) { delta /= 2; }
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+  setTimeout(function () {
+    that.tick()
+  }, delta)
+}
+window.onload = function () {
+  const elements = doc.getElementsByClassName('typewrite');
+  for (let i = 0; i < elements.length; i++) {
+    const toRotate = elements[i].getAttribute('data-type');
+    const period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtType(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS 
+  let css = doc.createElement("style")
+  css.type = "text/css"
+  css.innerHTML = ".typewrite > .wrap { border-right: 0.05em solid #263138}";
+  doc.body.appendChild(css)
+}
+
 //Get current year
 const year = document.querySelector('.get-year');
 year.textContent = new Date().getFullYear();
@@ -122,3 +174,58 @@ const resizeOps = () => {
 };
 resizeOps();
 window.addEventListener("resize", resizeOps);
+
+// Function to reset form fields
+function resetForm() {
+  ['name', 'subject', 'email', 'message'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+};
+
+//Email Js code
+emailjs.init('FjMleEN7Kptej6Rej');
+
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Use EmailJS to send email
+    emailjs.send('service_k84oe4w', 'template_zgokmbr', {
+      name,
+      subject,
+      email,
+      message,
+    }).then(
+      function () {
+        //Debugging purpose
+        //console.log('Email sent successfully:', response);
+        // Clear the input fields
+        resetForm();
+        // Trigger Sweet Alert Success
+        Swal.fire({
+          title: "Confirmation",
+          text: "Message sent successfully",
+          icon: "success"
+        });
+      },
+      function (error) {
+        //Debugging purpose
+        //console.log('Failed to send email:', error);
+        // Trigger Sweet Alert Error
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Failed to send message",
+          footer: 'Error: '+ error
+        });
+      }
+    );
+  });
+});
