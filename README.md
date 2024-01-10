@@ -2,12 +2,6 @@
 
 Welcome to my portfolio! 🚀 I'm passionate about frontend/Low-Code development and UI Designing.
 
-## 🛠️ Skills
-
-- **Frontend Development:** [HTML5, CSS3, Bootstrap 5, and Sass]
-- **Low-Code Development:** [OutSystems Lowcode Platform]
-- **Designing/Document processing:** [Canva, Figma, and Microsoft Office]
-
 ## 📫 Contact
 
 Feel free to reach out to me!
