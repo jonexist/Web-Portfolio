@@ -622,34 +622,23 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   transition: all 1s ease-in-out;
 }
-.show {
+.show-fade-animation {
   opacity: 1;
 }
-.slide-animation {
+.y-axis-animation {
   opacity: 0;
   filter: blur(5px);
-  transform: translateY(-100%);
-  transition: all 1s;
+  transform: translateY(-30%);
+  transition: all 1s ease-in-out;
 }
-.show-slide {
+.show-y-axis-animation {
   opacity: 1;
   filter: blur(0);
   transform: translateY(0);
 }
-.slide-left-animation {
-  opacity: 0;
-  filter: blur(5px);
-  transform: translatex(-100%);
-  transition: all 1s;
-}
-.show-left-slide {
-  opacity: 1;
-  filter: blur(0);
-  transform: translatex(0);
-}
 .timeline-item {
   .timeline-item:nth-child(1) {
-    transition-delay: 200ms;
+    transition-delay: 250ms;
   }
   .timeline-item:nth-child(2) {
     transition-delay: 300ms;
@@ -658,32 +647,53 @@ body::-webkit-scrollbar-thumb {
     transition-delay: 400ms;
   }
 }
+.slide-skill-animation {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translatex(-20%);
+  transition: all 1s ease-in-out;
+}
+.show-skill-animation {
+  opacity: 1;
+  filter: blur(0);
+  transform: translatex(0);
+}
+.x-axis-right-animation {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translatex(10%);
+  transition: all 1s ease-in-out;
+}
+.show-x-axis-right-animation {
+  opacity: 1;
+  filter: blur(0);
+  transform: translatex(0);
+}
+.x-axis-left-animation {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translatex(-10%);
+  transition: all 1s ease-in-out;
+}
+.show-x-axis-left-animation {
+  opacity: 1;
+  filter: blur(0);
+  transform: translatex(0);
+}
 .project-content {
-  .project-content:nth-child(1) {
-    transition-delay: 100ms;
-  }
-  .project-content:nth-child(2) {
-    transition-delay: 150ms;
-  }
-  .project-content:nth-child(3) {
+  .project-content:nth-child(even) {
     transition-delay: 200ms;
   }
-  .project-content:nth-child(4) {
-    transition-delay: 250ms;
-  }
-  .project-content:nth-child(5) {
-    transition-delay: 300ms;
-  }
-  .project-content:nth-child(6) {
-    transition-delay: 400ms;
+  .project-content:nth-child(odd) {
+    transition-delay: 200ms;
   }
 }
 .low-code-project {
-  .low-code-project:nth-child(1) {
-    transition-delay: 450ms;
+  .low-code-project:nth-child(even) {
+    transition-delay: 200ms;
   }
-  .low-code-project:nth-child(2) {
-    transition-delay: 500ms;
+  .low-code-project:nth-child(odd) {
+    transition-delay: 200ms;
   }
 }
 /*Animation end*/
@@ -715,7 +725,6 @@ body::-webkit-scrollbar-thumb {
     }
   }
 }
-
 @media (max-width: 760px) {
   .nav-list {
     display: none;
