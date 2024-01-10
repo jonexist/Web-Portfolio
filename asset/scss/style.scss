@@ -70,7 +70,7 @@ body::-webkit-scrollbar-thumb {
   height: $nav-height;
   transition: $transition-175s;
   .scrolled-navbar {
-    box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
 }
 .navbar {
@@ -288,6 +288,11 @@ body::-webkit-scrollbar-thumb {
     background: $secondary-color;
     bottom: 0;
     left: 0;
+  }
+}
+.content {
+  h3 {
+    text-transform: uppercase !important;
   }
 }
 .page-title-no-pt {
@@ -605,6 +610,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .copyright {
+  p,
   span {
     font-size: $span-font-size + 0.3rem;
     color: $light-color;

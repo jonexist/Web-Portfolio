@@ -58,7 +58,7 @@ body::-webkit-scrollbar-thumb {
   transition: all 175ms ease-in-out;
 }
 .primary-header .scrolled-navbar {
-  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .navbar {
@@ -285,6 +285,10 @@ body::-webkit-scrollbar-thumb {
   background: #445964;
   bottom: 0;
   left: 0;
+}
+
+.content h3 {
+  text-transform: uppercase !important;
 }
 
 .page-title-no-pt h2 {
@@ -624,6 +628,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #445964;
 }
 
+.copyright p,
 .copyright span {
   font-size: 1.013rem;
   color: #8c9fa9;
