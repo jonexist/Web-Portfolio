@@ -241,6 +241,6 @@ skillSet.forEach((skill, index) => {
   }
 })
 
-// // Get current year
-// const year = document.querySelector('.get-year');
-// year.textContent = new Date().getFullYear();
+// Get current year
+const year = document.querySelector('.get-year');
+year.textContent = new Date().getFullYear();
