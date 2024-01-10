@@ -150,7 +150,6 @@ function downloadCV() {
 
 //Hover effect on skill items
 const skillSet = document.querySelectorAll('.skill-item')
-
 skillSet.forEach((skill, index) => {
   if (index % 2 === 0) {
     skill.style.backgroundColor = 'rgba(68, 89, 100, 0.1)'
