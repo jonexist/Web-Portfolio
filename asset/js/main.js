@@ -1,3 +1,7 @@
+//Get current year
+const year = document.querySelector('.get-year');
+year.textContent = new Date().getFullYear();
+
 /*Navigation mobile menu*/
 const doc = document;
 const menuOpen = doc.querySelector(".menu-cta");
