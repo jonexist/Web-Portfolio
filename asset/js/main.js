@@ -12,13 +12,10 @@ const overlay = doc.querySelector(".overlay");
 const toggleMenu = () => {
   overlay.classList.toggle("overlay--active");
 };
-
 // Open menu when menuOpen is clicked
 menuOpen.addEventListener("click", toggleMenu);
-
 // Close menu when menuClose is clicked
 menuClose.addEventListener("click", toggleMenu);
-
 // Close menu when clicking anywhere outside the menu
 doc.addEventListener("click", (event) => {
   const isClickInsideMenu = overlay.contains(event.target) || menuOpen.contains(event.target);
@@ -29,9 +26,6 @@ doc.addEventListener("click", (event) => {
 });
 
 // Activate Scrollspy
-// const mainScrollSpy = new bootstrap.ScrollSpy(document.querySelector('main'), {
-//   target: '#navigation'
-// });
 document.addEventListener('DOMContentLoaded', function () {
   const mainScrollSpy = new bootstrap.ScrollSpy(document.body, {
     target: '#navigation'
@@ -84,78 +78,20 @@ function smoothScroll(target, duration) {
   requestAnimationFrame(animation)
 }
 
-/*Code for typewriter effects*/
-let TxtType = function (el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtType.prototype.tick = function () {
-  let i = this.loopNum % this.toRotate.length;
-  let fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-  this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-  let that = this;
-  let delta = 200 - Math.random() * 100;
-  if (this.isDeleting) { delta /= 2; }
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
-  setTimeout(function () {
-    that.tick()
-  }, delta)
-}
-window.onload = function () {
-  const elements = doc.getElementsByClassName('typewrite');
-  for (let i = 0; i < elements.length; i++) {
-    const toRotate = elements[i].getAttribute('data-type');
-    const period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtType(elements[i], JSON.parse(toRotate), period);
-    }
-  }
-  // INJECT CSS 
-  var css = doc.createElement("style")
-  css.type = "text/css"
-  css.innerHTML = ".typewrite > .wrap { border-right: 0.05em solid #263138}";
-  doc.body.appendChild(css)
-}
-
 /*Onclick download CV*/
 function downloadCV() {
   // Path to your CV file
   const filePath = '/asset/resume/Resume.pdf'; // Update the path accordingly
-
   // Create an anchor element
   const a = document.createElement('a');
-  
   // Set the href attribute to the file path
   a.href = filePath;
-  
   // Set the download attribute with the desired file name
   a.download = 'Goboli Resume.pdf'; // Update the file name accordingly
-  
   // Append the anchor element to the document body
   document.body.appendChild(a);
-  
   // Trigger a click on the anchor element
   a.click();
-  
   // Remove the anchor element from the document body
   document.body.removeChild(a);
 }
@@ -168,7 +104,6 @@ skillSet.forEach((skill, index) => {
     skill.style.backgroundColor = 'rgba(68, 89, 100, 0.1)'
   } else {
     skill.style.backgroundColor = 'rgba(68, 89, 100, 0.05)'
-
     skill.addEventListener('mouseover', () => {
       skill.style.backgroundColor = 'rgba(68, 89, 100, 0.1)'
       skill.style.borderLeft = '0.5px dashed rgba(68, 89, 100, 0.3)'
@@ -185,61 +120,5 @@ skillSet.forEach((skill, index) => {
 const resizeOps = () => {
   document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
 };
-
 resizeOps();
 window.addEventListener("resize", resizeOps);
-
-// Function to reset form fields
-function resetForm() {
-  ['name', 'subject', 'email', 'message'].forEach(id => {
-    document.getElementById(id).value = '';
-  });
-};
-
-//Email Js code
-emailjs.init('FjMleEN7Kptej6Rej');
-
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('contact-form');
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    // Get form values
-    const name = document.getElementById('name').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    // Use EmailJS to send email
-    emailjs.send('service_k84oe4w', 'template_zgokmbr', {
-      name,
-      subject,
-      email,
-      message,
-    }).then(
-      function () {
-        //Debugging purpose
-        //console.log('Email sent successfully:', response);
-        // Clear the input fields
-        resetForm();
-        // Trigger Sweet Alert Success
-        Swal.fire({
-          title: "Confirmation",
-          text: "Message sent successfully",
-          icon: "success"
-        });
-      },
-      function (error) {
-        //Debugging purpose
-        //console.log('Failed to send email:', error);
-        // Trigger Sweet Alert Error
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Failed to send message",
-          footer: 'Error: '+ error
-        });
-      }
-    );
-  });
-});
