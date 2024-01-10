@@ -228,3 +228,51 @@ document.addEventListener('DOMContentLoaded', function () {
     );
   });
 });
+
+// Fade animate on scroll using Intersection Observer
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target); // Stop observing once the element is visible
+      setTimeout(() => {
+        entry.target.classList.remove('fade-animation');
+      }, 1000); // Set a timeout of 1 second (1000 milliseconds)
+    }
+  });
+});
+
+const fadeElements = document.querySelectorAll('.fade-animation');
+fadeElements.forEach((el) => observer.observe(el));
+
+// Slide-down animation on scroll using Intersection Observer
+const observeSlide = new IntersectionObserver((entries, slideObserver) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show-slide');
+      slideObserver.unobserve(entry.target); // Stop observing once the element is visible
+      setTimeout(() => {
+        entry.target.classList.remove('slide-animation');
+      }, 1000);
+    }
+  });
+});
+
+const slideElements = document.querySelectorAll('.slide-animation');
+slideElements.forEach((el) => observeSlide.observe(el));
+
+// Slide-left animation on scroll using Intersection Observer
+const obserserSlideLeft = new IntersectionObserver ((entries, slideleftObserver) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show-left-slide');
+      slideleftObserver.unobserve(entry.target);
+      setTimeout(() => {
+        entry.target.classList.remove('slide-left-animation');
+      }, 1000);
+    }
+  });
+});
+
+const slideLeftAnimation = document.querySelectorAll('.slide-left-animation');
+slideLeftAnimation.forEach((el) => obserserSlideLeft.observe(el));
