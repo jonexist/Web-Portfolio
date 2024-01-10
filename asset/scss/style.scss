@@ -453,13 +453,13 @@ body::-webkit-scrollbar-thumb {
   border: none;
 }
 .project-desc {
-  p {
+  h3 {
     color: $onhover-color-1 !important;
-    font-weight: 600;
-    font-size: $sub-heading-font-size;
-    position: relative;
+    font-weight: 600 !important;
+    font-size: $sub-heading-font-size !important;
+    position: relative !important;
   }
-  span {
+  p {
     color: $secondary-color !important;
     text-align: justify !important;
   }

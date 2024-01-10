@@ -460,13 +460,13 @@ body::-webkit-scrollbar-thumb {
   border: none;
 }
 
-.project-desc p {
+.project-desc h3 {
   color: #35434D !important;
-  font-weight: 600;
-  font-size: 1.125rem;
-  position: relative;
+  font-weight: 600 !important;
+  font-size: 1.125rem !important;
+  position: relative !important;
 }
-.project-desc span {
+.project-desc p {
   color: #445964 !important;
   text-align: justify !important;
 }
