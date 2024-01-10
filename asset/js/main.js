@@ -50,87 +50,23 @@ window.onload = function () {
   doc.body.appendChild(css)
 }
 
-//Get current year
-const year = document.querySelector('.get-year');
-year.textContent = new Date().getFullYear();
-
-/*Navigation mobile menu*/
-const doc = document;
-const menuOpen = doc.querySelector(".menu-cta");
-const menuClose = doc.querySelector(".close");
-const overlay = doc.querySelector(".overlay");
-
-// Toggle menu visibility
-const toggleMenu = () => {
-  overlay.classList.toggle("overlay--active");
-};
-// Open menu when menuOpen is clicked
-menuOpen.addEventListener("click", toggleMenu);
-// Close menu when menuClose is clicked
-menuClose.addEventListener("click", toggleMenu);
-// Close menu when clicking anywhere outside the menu
-doc.addEventListener("click", (event) => {
-  const isClickInsideMenu = overlay.contains(event.target) || menuOpen.contains(event.target);
-  
-  if (!isClickInsideMenu && overlay.classList.contains("overlay--active")) {
-    overlay.classList.remove("overlay--active");
-  }
-});
-
-// Activate Scrollspy
-document.addEventListener('DOMContentLoaded', function () {
-  const mainScrollSpy = new bootstrap.ScrollSpy(document.body, {
-    target: '#navigation'
+// Animate on scroll using Intersection Observer
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show-fade-animation', 'show-y-axis-animation', 'show-x-axis-right-animation', 'show-x-axis-left-animation', 'show-skill-animation');
+      observer.unobserve(entry.target); // Stop observing once the element is visible
+      setTimeout(() => {
+        entry.target.classList.remove('fade-animation', 'y-axis-animation', 'x-axis-right-animation', 'x-axis-left-animation', 'slide-skill-animation');
+      }, 1000); // Set a timeout of 1 second (1000 milliseconds)
+    }
   });
 });
 
-const navbar = doc.querySelector('.primary-header')
-const navLinks = doc.querySelectorAll(['.nav-link', '.nav-logo', '.link-cta', '.to-top'])
+const animateElements = document.querySelectorAll('.fade-animation, .y-axis-animation, .x-axis-right-animation, .x-axis-left-animation, .slide-skill-animation');
+animateElements.forEach((el) => observer.observe(el));
 
-window.addEventListener('scroll', () => {
-  const navbarHeight = doc.querySelector('.primary-header').offsetHeight;
-  if (window.scrollY > navbarHeight) {
-    navbar.classList.add('scrolled-navbar')
-  } else {
-    navbar.classList.remove('scrolled-navbar')
-  }
-})
-navLinks.forEach((link) => {
-  link.addEventListener('click', e => {
-    e.preventDefault()
-    const target = link.getAttribute('href')
-    const duration = 500
-    smoothScroll(target, duration)
-    overlay.classList.remove("overlay--active");
-  })
-})
-
-/*Smooth Scrolling*/
-function smoothScroll(target, duration) {
-  const targetElement = doc.querySelector(target)
-  const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY
-  const startPosition = window.scrollY
-  const distance = targetPosition - startPosition
-  let startTime = null
-
-  function animation(currentTime) {
-    if (startTime === null) startTime = currentTime
-    const timeElapsed = currentTime - startTime
-    const ease = easeInOutCubic(timeElapsed, startPosition, distance, duration)
-    window.scrollTo(0, ease)
-    if (timeElapsed < duration) requestAnimationFrame(animation)
-  }
-
-  function easeInOutCubic(t, b, c, d) {
-    t /= d / 2
-    if (t < 1) return (c / 2) * t * t * t + b
-    t -= 2
-    return (c / 2) * (t * t * t + 2) + b
-  }
-  requestAnimationFrame(animation)
-}
-
-/*Onclick download CV*/
+// Onclick download resume
 function downloadCV() {
   // Path to your CV file
   const filePath = '/asset/resume/Resume.pdf'; // Update the path accordingly
@@ -148,32 +84,6 @@ function downloadCV() {
   document.body.removeChild(a);
 }
 
-//Hover effect on skill items
-const skillSet = document.querySelectorAll('.skill-item')
-skillSet.forEach((skill, index) => {
-  if (index % 2 === 0) {
-    skill.style.backgroundColor = 'rgba(68, 89, 100, 0.1)'
-  } else {
-    skill.style.backgroundColor = 'rgba(68, 89, 100, 0.05)'
-    skill.addEventListener('mouseover', () => {
-      skill.style.backgroundColor = 'rgba(68, 89, 100, 0.1)'
-      skill.style.borderLeft = '0.5px dashed rgba(68, 89, 100, 0.3)'
-      skill.style.borderRight = '0.5px dashed rgba(68, 89, 100, 0.3)'
-    })
-    skill.addEventListener('mouseout', () => {
-      skill.style.backgroundColor = 'rgba(68, 89, 100, 0.05)'
-      skill.style.borderColor = 'transparent'
-    })
-  }
-})
-
-//Auto fit content on screen
-const resizeOps = () => {
-  document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
-};
-resizeOps();
-window.addEventListener("resize", resizeOps);
-
 // Function to reset form fields
 function resetForm() {
   ['name', 'subject', 'email', 'message'].forEach(id => {
@@ -181,7 +91,7 @@ function resetForm() {
   });
 };
 
-//Email Js code
+// Email Js code
 emailjs.init('FjMleEN7Kptej6Rej');
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -229,50 +139,108 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// Fade animate on scroll using Intersection Observer
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target); // Stop observing once the element is visible
-      setTimeout(() => {
-        entry.target.classList.remove('fade-animation');
-      }, 1000); // Set a timeout of 1 second (1000 milliseconds)
-    }
+// Auto fit content on screen
+const resizeOps = () => {
+  document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+};
+resizeOps();
+window.addEventListener("resize", resizeOps);
+
+// Navigation mobile menu
+const doc = document;
+const menuOpen = doc.querySelector(".menu-cta");
+const menuClose = doc.querySelector(".close");
+const overlay = doc.querySelector(".overlay");
+
+// Toggle menu visibility
+const toggleMenu = () => {
+  overlay.classList.toggle("overlay--active");
+};
+// Open menu when menuOpen is clicked
+menuOpen.addEventListener("click", toggleMenu);
+// Close menu when menuClose is clicked
+menuClose.addEventListener("click", toggleMenu);
+// Close menu when clicking anywhere outside the menu
+doc.addEventListener("click", (event) => {
+  const isClickInsideMenu = overlay.contains(event.target) || menuOpen.contains(event.target);
+  
+  if (!isClickInsideMenu && overlay.classList.contains("overlay--active")) {
+    overlay.classList.remove("overlay--active");
+  }
+});
+
+// Activate Scrollspy
+document.addEventListener('DOMContentLoaded', function () {
+  const mainScrollSpy = new bootstrap.ScrollSpy(document.body, {
+    target: '#navigation'
   });
 });
 
-const fadeElements = document.querySelectorAll('.fade-animation');
-fadeElements.forEach((el) => observer.observe(el));
+const navbar = document.querySelector('.primary-header')
+const navLinks = document.querySelectorAll(['.nav-link', '.nav-logo', '.link-cta', '.to-top'])
 
-// Slide-down animation on scroll using Intersection Observer
-const observeSlide = new IntersectionObserver((entries, slideObserver) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show-slide');
-      slideObserver.unobserve(entry.target); // Stop observing once the element is visible
-      setTimeout(() => {
-        entry.target.classList.remove('slide-animation');
-      }, 1000);
-    }
-  });
-});
+window.addEventListener('scroll', () => {
+  const navbarHeight = document.querySelector('.primary-header').offsetHeight;
+  if (window.scrollY > navbarHeight) {
+    navbar.classList.add('scrolled-navbar')
+  } else {
+    navbar.classList.remove('scrolled-navbar')
+  }
+})
+navLinks.forEach((link) => {
+  link.addEventListener('click', e => {
+    e.preventDefault()
+    const target = link.getAttribute('href')
+    const duration = 500
+    smoothScroll(target, duration)
+    overlay.classList.remove("overlay--active");
+  })
+})
 
-const slideElements = document.querySelectorAll('.slide-animation');
-slideElements.forEach((el) => observeSlide.observe(el));
+// Smooth Scrolling
+function smoothScroll(target, duration) {
+  const targetElement = doc.querySelector(target)
+  const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY
+  const startPosition = window.scrollY
+  const distance = targetPosition - startPosition
+  let startTime = null
 
-// Slide-left animation on scroll using Intersection Observer
-const obserserSlideLeft = new IntersectionObserver ((entries, slideleftObserver) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show-left-slide');
-      slideleftObserver.unobserve(entry.target);
-      setTimeout(() => {
-        entry.target.classList.remove('slide-left-animation');
-      }, 1000);
-    }
-  });
-});
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime
+    const timeElapsed = currentTime - startTime
+    const ease = easeInOutCubic(timeElapsed, startPosition, distance, duration)
+    window.scrollTo(0, ease)
+    if (timeElapsed < duration) requestAnimationFrame(animation)
+  }
 
-const slideLeftAnimation = document.querySelectorAll('.slide-left-animation');
-slideLeftAnimation.forEach((el) => obserserSlideLeft.observe(el));
+  function easeInOutCubic(t, b, c, d) {
+    t /= d / 2
+    if (t < 1) return (c / 2) * t * t * t + b
+    t -= 2
+    return (c / 2) * (t * t * t + 2) + b
+  }
+  requestAnimationFrame(animation)
+}
+
+// Hover effect on skill items
+const skillSet = document.querySelectorAll('.skill-item')
+skillSet.forEach((skill, index) => {
+  if (index % 2 === 0) {
+    skill.style.backgroundColor = 'rgba(68, 89, 100, 0.1)'
+  } else {
+    skill.style.backgroundColor = 'rgba(68, 89, 100, 0.05)'
+    skill.addEventListener('mouseover', () => {
+      skill.style.backgroundColor = 'rgba(68, 89, 100, 0.1)'
+      skill.style.borderLeft = '0.5px dashed rgba(68, 89, 100, 0.3)'
+      skill.style.borderRight = '0.5px dashed rgba(68, 89, 100, 0.3)'
+    })
+    skill.addEventListener('mouseout', () => {
+      skill.style.backgroundColor = 'rgba(68, 89, 100, 0.05)'
+      skill.style.borderColor = 'transparent'
+    })
+  }
+})
+
+// Get current year
+const year = document.querySelector('.get-year');
+year.textContent = new Date().getFullYear();
