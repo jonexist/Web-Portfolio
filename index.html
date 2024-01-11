@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1"> -->
   <!--Favicon-->
   <link rel="icon" type="image/png" sizes="32x32" href="/asset/img/logo/favicon.png">
   <!--CSS link-->
@@ -23,47 +22,47 @@
   <title>Portfolio</title>
 </head>
 <body>
-<!--Main Content of the Portfolio-->
-  <main class="portfolio-content h-auto" data-bs-spy="scroll" data-bs-target="#navigation" data-bs-offset="0" tabindex="0">
-    <!--Navigation-->
-    <header class="primary-header container-fluid d-flex">
-      <nav class="navbar nav-container container-fluid d-flex justify-content-space-around align-items-center">
-        <a class="nav-logo" href="#home">
-          <img src="/asset/img/logo/Logo.svg" alt="Logo">
-          <h2 class="owner m-0">JG.</h2>
-        </a>
-        <div class="nav-list" id="navigation">
-          <ul class="nav nav-pills">
-            <li class="nav-item">
-              <a class="nav-link p-0" href="#home">home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link p-0" href="#about-me">about</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link p-0" href="#projects">projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link p-0" href="#contact">contact</a>
-            </li>
-          </ul>
-        </div>
-        <p class="menu-cta">
-          <i class='bx bx-menu' style='color:#445964'></i>
-        </p>
-      </nav>
-      <div class="overlay">
-        <a class="close"><i class='bx bx-x bx-md'></i></a>
-        <div class="overlay_content" id="navigation">
-          <ul class="mobile_nav d-flex align-items-center m-0 p-0">
-            <li><a class="nav-link p-0" href="#home">Home</a></li>
-            <li><a class="nav-link p-0" href="#about-me">About</a></li>
-            <li><a class="nav-link p-0" href="#projects">Projects</a></li>
-            <li><a class="nav-link p-0" href="#contact">Contact</a></li>
-          </ul>
-        </div>
+  <!--Navigation-->
+  <header class="primary-header container-fluid d-flex">
+    <nav class="navbar nav-container container-fluid d-flex justify-content-space-around align-items-center">
+      <a class="nav-logo" href="#home">
+        <img src="/asset/img/logo/Logo.svg" alt="Logo">
+        <h2 class="owner m-0">JG.</h2>
+      </a>
+      <div class="nav-list" id="navigation">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link p-0" href="#home">home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-0" href="#about-me">about</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-0" href="#projects">projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-0" href="#contact">contact</a>
+          </li>
+        </ul>
       </div>
-    </header>
+      <p class="menu-cta">
+        <i class='bx bx-menu' style='color:#445964'></i>
+      </p>
+    </nav>
+    <div class="overlay">
+      <a class="close"><i class='bx bx-x bx-md'></i></a>
+      <div class="overlay_content" id="navigation">
+        <ul class="mobile_nav d-flex align-items-center m-0 p-0">
+          <li><a class="nav-link p-0" href="#home">Home</a></li>
+          <li><a class="nav-link p-0" href="#about-me">About</a></li>
+          <li><a class="nav-link p-0" href="#projects">Projects</a></li>
+          <li><a class="nav-link p-0" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!--Main Content of the Portfolio-->
+  <main class="portfolio-content h-auto" data-bs-spy="scroll" data-bs-target="#navigation" data-bs-offset="0" tabindex="0">
     <!--Hero section-->
     <section class="fade-animation portfolio-section position-relative hero-section d-flex justify-content-center align-items-center" id="home">
       <div class="hero-cta container">
@@ -525,29 +524,29 @@
         </div>
       </div>
     </section>
-    <!--Footer section-->
-    <section class="footer w-100 h-auto">
-      <div class="social-media-footer w-auto flex-row d-flex justify-content-center align-items-center gap-1">
-        <a href="https://github.com/jonexist" target="_blank">
-          <i class="bx bxl-github bx-sm">
-          </i>
-        </a>
-        <a href="https://www.linkedin.com/in/jonathan-goboli-178763252/" target="_blank">
-          <i class="bx bxl-linkedin bx-sm">
-          </i>
-        </a>
-        <a href="https://www.instagram.com/jonexist/" target="_blank">
-          <i class="bx bxl-instagram bx-sm"></i>
-        </a>
-      </div>
-      <div class="copyright">
-        <p>
-          <i class='bx bx-copyright'></i>
-          <span class="get-year"></span>
-          Jonathan Goboli
-        </p>
-      </div>
-    </section>
   </main>
+  <!--Footer section-->
+  <footer class="footer container-fluid">
+    <div class="social-media-footer w-auto flex-row d-flex justify-content-center align-items-center gap-1">
+      <a href="https://github.com/jonexist" target="_blank">
+        <i class="bx bxl-github bx-sm">
+        </i>
+      </a>
+      <a href="https://www.linkedin.com/in/jonathan-goboli-178763252/" target="_blank">
+        <i class="bx bxl-linkedin bx-sm">
+        </i>
+      </a>
+      <a href="https://www.instagram.com/jonexist/" target="_blank">
+        <i class="bx bxl-instagram bx-sm"></i>
+      </a>
+    </div>
+    <div class="copyright">
+      <p>
+        <i class='bx bx-copyright'></i>
+        <span class="get-year"></span>
+        Jonathan Goboli
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
