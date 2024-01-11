@@ -176,17 +176,19 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// On scroll navbar blur effect
 const navbar = document.querySelector('.primary-header')
-const navLinks = document.querySelectorAll(['.nav-link', '.nav-logo', '.link-cta', '.to-top'])
-
-window.addEventListener('scroll', () => {
-  const navbarHeight = document.querySelector('.primary-header').offsetHeight;
+window.onscroll = () => {
+  const navbarHeight = navbar.offsetHeight;
   if (window.scrollY > navbarHeight) {
-    navbar.classList.add('scrolled-navbar')
+    navbar.classList.add('scrolled-navbar');
   } else {
-    navbar.classList.remove('scrolled-navbar')
+    navbar.classList.remove('scrolled-navbar');
   }
-})
+};
+
+// Smooth Scroll effect
+const navLinks = document.querySelectorAll(['.nav-link', '.nav-logo', '.link-cta', '.to-top'])
 navLinks.forEach((link) => {
   link.addEventListener('click', e => {
     e.preventDefault()
@@ -194,10 +196,9 @@ navLinks.forEach((link) => {
     const duration = 500
     smoothScroll(target, duration)
     overlay.classList.remove("overlay--active");
-  })
-})
+  });
+});
 
-// Smooth Scrolling
 function smoothScroll(target, duration) {
   const targetElement = doc.querySelector(target)
   const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY
