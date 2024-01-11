@@ -139,12 +139,12 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// // Auto fit content on screen
-// const resizeOps = () => {
-//   document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
-// };
-// resizeOps();
-// window.addEventListener("resize", resizeOps);
+// Auto fit content on screen
+const resizeOps = () => {
+  document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+};
+resizeOps();
+window.addEventListener("resize", resizeOps);
 
 // Navigation mobile menu
 const doc = document;
