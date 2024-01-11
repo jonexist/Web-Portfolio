@@ -38,7 +38,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 #home {
-  height: 100dvh;
   height: calc(var(--vh, 1vh) * 100);
 }
 
@@ -52,17 +51,20 @@ body::-webkit-scrollbar-thumb {
 /*Navigation design*/
 .primary-header {
   position: fixed;
-  background-color: #FBFBFB !important;
   z-index: 1;
   height: 5rem;
   transition: all 175ms ease-in-out;
 }
-.primary-header .scrolled-navbar {
+
+.scrolled-navbar {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
 }
 
 .navbar {
-  padding: 0 !important;
+  padding: 0 2% !important;
 }
 
 .nav-container .nav-logo {
@@ -121,10 +123,6 @@ body::-webkit-scrollbar-thumb {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-.nav-container .nav-link:hover {
-  color: #263138 !important;
-  transition: 0.1s ease-in-out;
-}
 
 /*mobile nav*/
 .menu-cta {
@@ -135,7 +133,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .overlay {
-  height: 100%;
+  height: 100vh;
   width: 0;
   position: fixed;
   z-index: 999;
@@ -247,7 +245,7 @@ body::-webkit-scrollbar-thumb {
 
 .social-media {
   flex-direction: column;
-  right: 1rem;
+  right: 2.3rem;
   bottom: 1rem;
 }
 .social-media i {
@@ -351,7 +349,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .timeline-with-icons {
-  border-left: 1px solid #263138;
+  border-left: 2px solid #445964;
   position: relative;
   list-style: none;
 }
@@ -550,6 +548,9 @@ body::-webkit-scrollbar-thumb {
 .tech-used i {
   color: #445964;
 }
+.tech-used img {
+  width: 8rem !important;
+}
 
 /*Project design end*/
 /*Contact design*/
@@ -638,7 +639,7 @@ body::-webkit-scrollbar-thumb {
 /*Animation*/
 .fade-animation {
   opacity: 0;
-  transition: all 1s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
 .show-fade-animation {
@@ -649,7 +650,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   filter: blur(5px);
   transform: translateY(-30%);
-  transition: all 1s ease-in-out;
+  transition: all 0.9s ease-in-out;
 }
 
 .show-y-axis-animation {
@@ -672,7 +673,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   filter: blur(5px);
   transform: translatex(-20%);
-  transition: all 1s ease-in-out;
+  transition: all 0.9s ease-in-out;
 }
 
 .show-skill-animation {
@@ -685,7 +686,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   filter: blur(5px);
   transform: translatex(10%);
-  transition: all 1s ease-in-out;
+  transition: all 0.9s ease-in-out;
 }
 
 .show-x-axis-right-animation {
@@ -698,7 +699,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   filter: blur(5px);
   transform: translatex(-10%);
-  transition: all 1s ease-in-out;
+  transition: all 0.9s ease-in-out;
 }
 
 .show-x-axis-left-animation {
