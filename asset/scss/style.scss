@@ -144,7 +144,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .overlay {
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 0;
   position: fixed;
   z-index: 999;
@@ -181,8 +181,8 @@ body::-webkit-scrollbar-thumb {
 }
 .overlay .close {
   position: absolute;
-  top: 20px;
-  right: 45px;
+  top: 12px;
+  right: 20px;
   color: $white-bg !important;
   font-size: 2.5rem;
 }
