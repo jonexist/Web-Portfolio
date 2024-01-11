@@ -53,8 +53,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 #home {
-  height: 100dvh;
-  // height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100);
 }
 #about-me,
 #projects,

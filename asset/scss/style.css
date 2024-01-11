@@ -38,7 +38,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #home {
-  height: 100dvh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 #about-me,
