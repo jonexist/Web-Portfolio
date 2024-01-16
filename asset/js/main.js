@@ -69,13 +69,13 @@ animateElements.forEach((el) => observer.observe(el));
 // Onclick download resume
 function downloadCV() {
   // Path to your CV file
-  const filePath = '/asset/resume/Resume.pdf'; // Update the path accordingly
+  const filePath = '/asset/resume/Jonathan Goboli - CV.pdf'; // Update the path accordingly
   // Create an anchor element
   const a = document.createElement('a');
   // Set the href attribute to the file path
   a.href = filePath;
   // Set the download attribute with the desired file name
-  a.download = 'Goboli Resume.pdf'; // Update the file name accordingly
+  a.download = 'Jonathan Goboli - CV.pdf'; // Update the file name accordingly
   // Append the anchor element to the document body
   document.body.appendChild(a);
   // Trigger a click on the anchor element
