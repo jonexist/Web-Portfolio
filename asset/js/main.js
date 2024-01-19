@@ -66,8 +66,8 @@ const observer = new IntersectionObserver((entries, observer) => {
 const animateElements = document.querySelectorAll('.fade-animation, .y-axis-animation, .x-axis-right-animation, .x-axis-left-animation, .slide-skill-animation');
 animateElements.forEach((el) => observer.observe(el));
 
-// Onclick download resume
-function downloadCV() {
+// Onclick download CV
+const downloadCV = document.getElementById('DownloadCV').addEventListener('click', function () {
   // Path to your CV file
   const filePath = '/asset/resume/Jonathan Goboli - CV.pdf'; // Update the path accordingly
   // Create an anchor element
@@ -82,7 +82,7 @@ function downloadCV() {
   a.click();
   // Remove the anchor element from the document body
   document.body.removeChild(a);
-}
+});
 
 // Function to reset form fields
 function resetForm() {
