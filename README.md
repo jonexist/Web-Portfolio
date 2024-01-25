@@ -1,12 +1,3 @@
-# Web Portfolio
+# Personal Portfolio
 
-Welcome to my portfolio! 🚀 I'm passionate about frontend/Low-Code development and UI Designing.
-
-## 📫 Contact
-
-Feel free to reach out to me!
-- **Email:** [Click here to send email](jgoboli2@gmail.com)
-- **LinkedIn:** [Click here to see my linkedin](https://www.linkedin.com/in/goboli-jonathan/)
-- **Portfolio:** [Click here to see my web portfolio](https://jgoboli-web-portfolio.onrender.com/)
-
-Thanks for stopping by! Let's connect and create amazing things together. 🚀
+My personal portfolio website showcases my skills and projects. Built with HTML, CSS, JavaScript, SASS, and Bootstrap 5, it offers a visually appealing and user-friendly experience. The responsive layout adapts to different screen sizes, while SASS and Bootstrap 5 ensure consistent styling. JavaScript adds interactivity and enhances the user experience. Explore my portfolio and reach out for inquiries or collaborations.
